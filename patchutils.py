@@ -465,7 +465,7 @@ class UniPatch(Patch):
 
 class ContextHunk(Hunk):
     def parse(self, reader):
-        return False
+        raise NotImplementedError()
 
 class ContextPatch(Patch):
     diff_type = CONTEXT_DIFF
@@ -475,7 +475,7 @@ class ContextPatch(Patch):
 
 class NewContextHunk(Hunk):
     def parse(self, reader):
-        return False
+        raise NotImplementedError()
 
 class NewContextPatch(Patch):
     diff_type = NEW_CONTEXT_DIFF
@@ -485,6 +485,9 @@ class NewContextPatch(Patch):
 
 class GitBinaryPatch(Patch):
     diff_type = GIT_BINARY_DIFF
+
+    def next_hunk(self):
+        raise NotImplementedError()
 
 class FileHeader(object):
     def __init__(self, lines=None):

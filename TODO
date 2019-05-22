@@ -1,0 +1,10 @@
+# Bugs
+
+There is no documentation, not even inline.  :-(
+
+# Missing Features
+
+These features are not yet implemented:
+
+- context patches
+- git binary patches
